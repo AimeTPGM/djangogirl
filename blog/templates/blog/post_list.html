@@ -8,9 +8,11 @@
     <h1>my blog</h1>
   </div>
   <div>
-    <p>published: 14.06.2014</p>
-    <h2><a href="#">title</a></h2>
-    <p>aaa</p>
+    {% for p in post %}
+    <p>{{ p.published_date }}</p>
+    <h2><a href="#">{{ p.title }}</a></h2>
+    <p>{{ p.text | linebreaksbr }}</p>
+    {% endfor %}
   </div>
 </body>
 </html>
